@@ -8,7 +8,10 @@ import openpyxl
 temperature = "26"
 path = 'dynamic.xlsx'
 
+NUMSAMPLES = 180
+
 def main():
+
     # Write the first row
     first_row = pd.DataFrame(columns=['Time', 'Sample'])
     with pd.ExcelWriter(path, engine='openpyxl', mode='a', if_sheet_exists='overlay') as writer:
@@ -16,7 +19,7 @@ def main():
 
 
     samples = 0
-    while(samples < 100):
+    while(samples < NUMSAMPLES):
         current_time = time.strftime("%H:%M:%S", time.localtime())
 
         new_row = pd.DataFrame([[str(current_time), str(samples)]])
