@@ -4,8 +4,6 @@ import datetime
 import time
 import openpyxl
 
-
-temperature = "26"
 path = 'dynamic.xlsx'
 
 NUMSAMPLES = 180
